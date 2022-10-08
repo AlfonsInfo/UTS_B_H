@@ -1,7 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 .bg {
-    background-color: #f8f9fa;
-    background-image: url("https://images.pexels.com/photos/2908984/pexels-photo-2908984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2");
+    /* background-color: #f8f9fa; */
+    background-image: url(image/library.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
