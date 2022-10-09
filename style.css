@@ -1,12 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap");
 .bg {
     /* background-color: #f8f9fa; */
-    background-image: url(image/library.jpg);
+    background-image: url(img/assets/library.jpg);
     height: 100%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+/* Font family untuk semuanya*/
+
+/* Pading marginnya tidak disetting jadi 0? */
 * {
     font-family: "Poppins";
 }
+
+/* display flex  */
