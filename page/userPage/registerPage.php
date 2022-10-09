@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet">
+    <link href="../../style.css" rel="stylesheet">
     <title>Register Page</title>
 </head>
 
@@ -38,7 +38,8 @@
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPhoto" class="form-label">Photo</label>
-                            <input class="form-control" type="file" id="nama_foto" name="nama_foto" aria-describedby="namaFotoHelp">
+                            <input class="form-control" type="file" id="nama_foto" name="nama_foto"
+                                aria-describedby="namaFotoHelp">
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary" name="register">Register</button>
