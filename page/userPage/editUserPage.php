@@ -33,7 +33,10 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
 0.19);">
     <div class="body d-flex justify-content-between">
         <h4>PROFILE</h4>
-        <i class="fa-solid fa-hand-holding"></i>
+        <button type="button" class="btn btn-outline-primary"
+            onclick="toggleEnable('namaUser','email','nama_foto')">Edit
+            Data</button>
+        <!-- <i class="fa-solid fa-hand-holding"></i> -->
         <!-- <h4 onclick="toggleEnable('namaUser','email','nama_foto')">Edit Profil</h4> -->
     </div>
     <div class="card" style="max-width: 1500px;">
@@ -66,9 +69,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                                     aria-describedby="namaFotoHelp" disabled>
                             </div>
                             <div class="d-grid gap-2">
-                                <button type="button" class="btn btn-primary"
-                                    onclick="toggleEnable('namaUser','email','nama_foto')">Edit
-                                    Data</button>
+
                                 <button type="submit" class="btn btn-primary" name="save">Save</button>
                             </div>
                         </form>
