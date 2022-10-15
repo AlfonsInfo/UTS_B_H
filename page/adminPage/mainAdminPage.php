@@ -18,8 +18,6 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 <th scope="col">Judul</th>
                 <th scope="col">Sampul</th>
                 <th scope="col">Tersedia</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
                 <th scope="col"></th>
             </tr>
         </thead>
@@ -42,7 +40,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                             onClick="return confirm ( \'Are you sure want to edit this data?\')">                        
                             <i style="color: green" class="fa fa-pencil fa-2x"></i>
                         </a>
-                        <a href="../process/deleteSeriesProcess(CRUD).php?id='.$data['id_buku'].'"   //proses delete nya belum di buat  
+                        <a href="../../process/deleteBuku.php?id='.$data['id_buku'].'"//Proses Delete Sudah Selesai 
                             onClick="return confirm ( \'Are you sure want to delete this data?\')">                          
                             <i style="color: red" class="fa fa-trash fa-2x"></i>
                         </a>
