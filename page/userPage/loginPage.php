@@ -9,12 +9,6 @@
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="../../style.css" rel="stylesheet">
     <title>Login Page</title>
-    <style>
-    bg {
-        background-image: url("/../image/library.jpg");
-    }
-    </style>
-
 </head>
 
 <body>
@@ -29,7 +23,7 @@
                 25rem;">
                 <div class="card-header fw-bold">Login</div>
                 <div class="card-body">
-                    <form action="../process/loginProcess.php" method="post">
+                    <form action="../../process/loginProcess.php" method="post">
                         <div class="mb-3">
                             <label for="exampleInputUsername" class="form-label">Username</label>
                             <input class="form-control" id="username" name="email" aria-describedby="emailHelp">
