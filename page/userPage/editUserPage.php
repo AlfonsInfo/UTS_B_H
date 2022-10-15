@@ -4,28 +4,29 @@
     //Hubungkan halaman dengan sidebar
     include '../../component/sidebarversi1.php';
     
-    echo'
+    echo"
     <script>
-    function toggleEnable(id1,id2,id3) {
+    function toggleEnable(id1,id2,id3,id4) {
         var textbox = document.getElementById(id1);
-        var textbox = document.getElementById(id2);
-        var textbox = document.getElementById(id3);
+        var textbox2 = document.getElementById(id4);
         
         if (textbox.disabled) {
            // If disabled, do this 
            document.getElementById(id1).disabled = false;
            document.getElementById(id2).disabled = false;
            document.getElementById(id3).disabled = false;
+           document.getElementById(id4).style.display = 'block';
         } else {
             // Enter code here
              document.getElementById(id1).disabled = true;
              document.getElementById(id2).disabled = true;
              document.getElementById(id3).disabled = true;
+             document.getElementById(id4).style.display = 'none';
           }
     }
     </script>   
      
-    ';
+    ";
 ?>
 
 <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
@@ -34,7 +35,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
     <div class="body d-flex justify-content-between">
         <h4>PROFILE</h4>
         <button type="button" class="btn btn-outline-primary"
-            onclick="toggleEnable('namaUser','email','nama_foto')">Edit
+            onclick="toggleEnable('namaUser','email','nama_foto','btnsave')">Edit
             Data</button>
         <!-- <i class="fa-solid fa-hand-holding"></i> -->
         <!-- <h4 onclick="toggleEnable('namaUser','email','nama_foto')">Edit Profil</h4> -->
@@ -70,7 +71,8 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                             </div>
                             <div class="d-grid gap-2">
 
-                                <button type="submit" class="btn btn-primary" name="save">Save</button>
+                                <button id="btnsave" type="submit" class="btn btn-primary" name="save"
+                                    style="display:none">Save</button>
                             </div>
                         </form>
                     </div>
