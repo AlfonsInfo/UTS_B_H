@@ -25,21 +25,20 @@
                 <div class="card-body">
                     <form action="../../process/registerProcess.php" method="post">
                         <div class="mb-3">
-                            <label for="exampleInputNamaUser" class="form-label">Nama User</label>
+                            <label for="inputNamaUser" class="form-label">Nama User</label>
                             <input class="form-control" id="nama_user" name="nama_user" aria-describedby="namaUserHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPassword" class="form-label">Password</label>
+                            <label for="inputPassword" class="form-label">Password</label>
                             <input class="form-control" id="password" name="password" aria-describedby="passwordHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputEmail" class="form-label">Email</label>
+                            <label for="inputEmail" class="form-label">Email</label>
                             <input class="form-control" id="email" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="exampleInputPhoto" class="form-label">Photo</label>
-                            <input class="form-control" type="file" id="nama_foto" name="nama_foto"
-                                aria-describedby="namaFotoHelp">
+                            <label for="inputNamaFoto" class="form-label">Photo</label>
+                            <input class="form-control" type="file" id="nama_foto" name="nama_foto" aria-describedby="namaFotoHelp">
                         </div>
                         <div class="d-grid gap-2">
                             <button type="submit" class="btn btn-primary" name="register">Register</button>

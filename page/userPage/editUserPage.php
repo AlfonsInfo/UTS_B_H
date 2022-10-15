@@ -1,6 +1,9 @@
 <?php
-    include '../component/sidebar.php';
-    $query = mysqli_query($con, "SELECT * FROM users WHERE id = ". $_SESSION['user']['id']);
+    //Variabel untuk nama title
+    $pagetitle = "Edit User";
+    //Hubungkan halaman dengan sidebar
+    include '../../component/sidebarversi1.php';
+    $query = mysqli_query($con, "SELECT * FROM user WHERE id = ". $_SESSION['user']['email']);
     $user = mysqli_fetch_assoc($query);
 ?>
 
@@ -9,34 +12,22 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
 0.19);" >
     <h4 >EDIT PROFILE</h4>
     <div class="card-body">
-        <form action="../process/editProfileProcess.php" method="POST">
+        <form action="../../process/editProfileProcess.php" method="POST">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Name</label>
-                    <input class="form-control" id="name" name="name"aria-describedby="emailHelp" value=" <?php echo $user['name']?>">
+                <label for="editNamaUser" class="form-label">Nama User</label>
+                    <input class="form-control" id="namaUser" name="namaUser" aria-describedby="namaUserHelp" value=" <?php echo $user['nama_user']?>">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Phone Number</label>
-                <input class="form-control" id="phonenum"name="phonenum" aria-describedby="emailHelp" value=" <?php echo $user['phonenum']?>">
+                <label for="editPassword" class="form-label">Password</label>
+                <input class="form-control" id="password" name="password" aria-describedby="passwordHelp" value=" <?php echo $user['password']?>">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Job</label>
-                <select class="form-select" aria-label="Default select example" name="job" id="job" value="<?php echo $user['job']?>">
-                    <option value="Chef">Chef</option>
-                    <option value="Mechanic">Mechanic</option>
-                    <option value="Lecturer">Lecturer</option>
-                </select>
+                <label for="editEmail" class="form-label">Email</label>
+                <input class="form-control" id="email" name="email" aria-describedby="emailHelp" value=" <?php echo $user['email']?>">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Email</label>
-                <input class="form-control" id="email"name="email" aria-describedby="emailHelp" value=" <?php echo $user['email']?>">
-            </div>
-            <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label">Membership</label>
-                <select class="form-select" aria-label="Default select example" name="membership" id="membership" value=" <?php echo $user['membership']?>" disabled>
-                    <option value="Reguler">Reguler</option>
-                    <option value="Platinum">Platinum</option>
-                    <option value="Gold">Gold</option>
-                </select>
+                <label for="editNamaFoto" class="form-label">Photo</label>
+                <input class="form-control" type="file" id="nama_foto" name="nama_foto" aria-describedby="namaFotoHelp">
             </div>
             <div class="d-grid gap-2">
                 <button type="submit" class="btn btn-primary" name="save">Save</button>
