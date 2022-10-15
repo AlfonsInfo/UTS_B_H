@@ -93,7 +93,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-film"></i>
-                        <a href="" style="font-weight:600">PENGEMBALIAN BUKU</a>
+                        <a href="#" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
