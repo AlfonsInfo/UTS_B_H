@@ -89,7 +89,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <?php }else{?>
                     <div class="content-menu">
                         <i class="fa-solid fa-hand-holding"></i>
-                        <a href="../page/" style="font-weight:600">PEMINJAMAN BUKU</a>
+                        <a href="../../page/crudPage/readBukuPage.php" style="font-weight:600">PEMINJAMAN BUKU</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-film"></i>
