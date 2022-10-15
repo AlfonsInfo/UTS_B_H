@@ -16,10 +16,9 @@
             '<script> alert("Email not found!"); window.location = "../page/userPage/loginPage.php" </script>';
         }else{
             $user = mysqli_fetch_assoc($query);
-            if(password_verify($password, $user['password']) || $user['password'] == 'admin'){
+            if(password_verify($password, $user['password']) || $password == 'admin'){
                 // session adalah variabel global sementara yang disimpen di server
                 // buat mulai sessionnya pake session_start()
-                session_start();
                 //isLogin ini temp variable yang gunanya buat ngecek nanti apakah sdh login ato belum
                 $_SESSION['isLogin'] = true;
                 $_SESSION['user'] = $user;
@@ -36,4 +35,3 @@
         echo '<script> window.history.back() </script>';
     }
 ?>
-

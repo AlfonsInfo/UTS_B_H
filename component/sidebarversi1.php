@@ -3,6 +3,8 @@
 <!-- 1. Hubungkan page sidebar ke database - agar tidak perlu dihubungkan satu-satu disetiap halamannnya -->
 <?php
     include('../../db.php'); 
+    // var_dump(url());die;
+    // var_dump($_SESSION);die;
 ?>
 
 <!-- Head dari Halaman web + Sidebar -->
@@ -70,22 +72,34 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                 <hr>
                 <div class="menu">
                     <div>
-                        <img src="" alt="foto profile">
-                        <a href=""></a>
+                        <img src="<?php echo url().'/img/assets/'.$_SESSION['user']['nama_foto']?>" alt="foto profile"
+                            width="50px" style="margin-left:10px;border-radius:50px;">
+                        <a href="profile"><?php echo $_SESSION['user']['nama_user'] ?></a>
                     </div>
-                    <?var_dump($_SESSION)?>
+                    <?php if($_SESSION['user']['email']=='admin'){ ?>
+                    <div class="content-menu">
+                        <i class="fa  fa-books"></i>
+                        <a href="../page/" style="font-weight:600">Olah Buku</a>
+                    </div>
+
+                    <div class="content-menu ">
+                        <i class="fa fa-sign-out"></i>
+                        <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>
+                    </div>
+                    <?php }else{?>
                     <div class="content-menu">
                         <i class="fa-solid fa-hand-holding"></i>
                         <a href="../page/" style="font-weight:600">PEMINJAMAN BUKU</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-film"></i>
-                        <a href="" style="font-weight:600">PENGEMBALIAN BUKU</a>
+                        <a href="#" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
-                        <a href="" style="font-weight:600">&nbspLogout</a>
+                        <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>
                     </div>
+                    <?php }?>
                     <hr>
                 </div>
             </div>
