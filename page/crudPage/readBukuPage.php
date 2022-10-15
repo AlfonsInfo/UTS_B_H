@@ -14,12 +14,11 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
     <table class="table ">
         <thead>
             <tr>
-                <th scope="col">ID</th>
+                <th scope="col">No</th>
                 <th scope="col">Judul</th>
                 <th scope="col">Sampul</th>
                 <th scope="col">Tersedia</th>
-                <!-- <th scope="col">Season</th>
-                <th scope="col"></th> -->
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -35,16 +34,18 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                     <th scope="row">'.$no.'</th>
                     <td>'.$data['nama_buku'].'</td>
                     <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
+                    <td>'.$data['jumlah_tersedia'].'</td>
                     <td>
-                        <a href="../process/deleteMovieProcess.php?id='.$data['id_buku'].'" 
-                            onClick="return confirm ( \'Are you sure want to delete this 
-                            data?\')"> <i style="color: red" class="fa fa-trash fa-2x"></i>
+                    <a href="../process/pinjamProcess.php?id='.$data['id_buku'].'" 
+                        onClick="return confirm ( \'Are you sure want to delete this 
+                        data?\')"> <i style="color: green" class="fa fa-book fa-lg"> Pinjam</i>
                         </a>
                     </td>
+                    </td>
                     </tr>';
-$no++;
-}
-}
+                    $no++;
+                }
+                }
 ?>
         </tbody>
     </table>
