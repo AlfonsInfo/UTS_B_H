@@ -9,6 +9,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
 0.19);">
     <div class="body d-flex justify-content-between">
         <h4>LIST BUKU</h4>
+        <i style="color: red" class="fa fa-plus-square-o fa-2x" aria-hidden="true"></i>
     </div>
     <hr>
     <table class="table ">
