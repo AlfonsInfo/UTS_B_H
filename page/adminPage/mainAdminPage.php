@@ -18,8 +18,6 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 <th scope="col">Judul</th>
                 <th scope="col">Sampul</th>
                 <th scope="col">Tersedia</th>
-                <th scope="col">Edit</th>
-                <th scope="col">Delete</th>
                 <th scope="col"></th>
             </tr>
         </thead>
