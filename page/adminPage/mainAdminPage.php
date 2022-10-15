@@ -18,8 +18,9 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 <th scope="col">Judul</th>
                 <th scope="col">Sampul</th>
                 <th scope="col">Tersedia</th>
-                <!-- <th scope="col">Season</th>
-                <th scope="col"></th> -->
+                <th scope="col">Edit</th>
+                <th scope="col">Delete</th>
+                <th scope="col"></th>
             </tr>
         </thead>
         <tbody>
@@ -29,16 +30,21 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 }else{
                     $no = 1;
                 while($data = mysqli_fetch_assoc($query)){
-                    
+                  
                 echo'
                     <tr>
                     <th scope="row">'.$no.'</th>
                     <td>'.$data['nama_buku'].'</td>
                     <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
+                    <td>'.$data['jumlah_tersedia'].'</td>
                     <td>
-                        <a href="../process/deleteMovieProcess.php?id='.$data['id_buku'].'" 
-                            onClick="return confirm ( \'Are you sure want to delete this 
-                            data?\')"> <i style="color: red" class="fa fa-trash fa-2x"></i>
+                        <a href="../adminPage/editBukuAdminPage.php?id='.$data['id_buku'].'" 
+                            onClick="return confirm ( \'Are you sure want to edit this data?\')">                        
+                            <i style="color: green" class="fa fa-pencil fa-2x"></i>
+                        </a>
+                        <a href="../process/deleteSeriesProcess(CRUD).php?id='.$data['id_buku'].'"   //proses delete nya belum di buat  
+                            onClick="return confirm ( \'Are you sure want to delete this data?\')">                          
+                            <i style="color: red" class="fa fa-trash fa-2x"></i>
                         </a>
                     </td>
                     </tr>';
