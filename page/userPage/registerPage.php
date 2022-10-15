@@ -23,7 +23,7 @@
             <div class="card text-white bg-dark ma-5 shadow " style="min-width: 25rem;">
                 <div class="card-header fw-bold">Register</div>
                 <div class="card-body">
-                    <form action="../../process/registerProcess.php" method="post">
+                    <form action="../../process/registerProcess.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="exampleInputNamaUser" class="form-label">Nama User</label>
                             <input class="form-control" id="nama_user" name="nama_user" aria-describedby="namaUserHelp">
