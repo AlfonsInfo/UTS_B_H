@@ -1,3 +1,11 @@
+<!-- Container dari Side Bar -->
+
+<!-- 1. Hubungkan page sidebar ke database - agar tidak perlu dihubungkan satu-satu disetiap halamannnya -->
+<?php
+    include('../../db.php'); 
+?>
+
+<!-- Head dari Halaman web + Sidebar -->
 <!Doctype html>
 <html lang="en">
 
@@ -13,7 +21,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap" rel="stylesheet">
-    <title>Dashboard!</title>
+    <title>Library - <?= $pagetitle;?></title>
     <style>
     * {
         font-family: "Poppins";
