@@ -78,13 +78,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     </div>
                     <?php if($_SESSION['user']['email']=='admin'){ ?>
                     <div class="content-menu">
-                        <i class="fa-solid fa-hand-holding"></i>
-                        <a href="../page/" style="font-weight:600">PEMINJAMAN BUKU</a>
+                        <i class="fa  fa-books"></i>
+                        <a href="../page/" style="font-weight:600">Olah Buku</a>
                     </div>
-                    <div class="content-menu ">
-                        <i class="fa fa-film"></i>
-                        <a href="" style="font-weight:600">PENGEMBALIAN BUKU</a>
-                    </div>
+
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
                         <a href="" style="font-weight:600">&nbspLogout</a>
