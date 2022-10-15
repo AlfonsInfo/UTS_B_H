@@ -5,7 +5,8 @@ move_uploaded_file -->
 <?php
     //Variabel untuk nama title
     $pagetitle = "Tambah Data Buku";
-include '../../component/sidebarversi1.php';
+    //Hubungkan halaman dengan sidebar
+    include '../../component/sidebarversi1.php';
 
 ?>
 <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px
