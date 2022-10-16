@@ -5,25 +5,26 @@
     include '../../component/sidebarversi1.php';
 
 ?>
-    <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
+<div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
     solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 
     0.19);">
     <div class="body d-flex justify-content-between">
         <h4>Daftar Kunjungan</h4>
+        <button type="button" class="btn btn-outline-primary" onclick="location.href='../../page/crudPage/editDaftarKunjunganPage.php'">Lihat Kunjungan</button>
     </div>
             <div class="card" style="max-width: 1500px;">
                 <div class="card-body">
                     <form action="../../process/createDaftarKunjunganProcess.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="nama" class="form-label">Nama Pengunjung</label>
+                            <label for="inputNama" class="form-label">Nama Pengunjung</label>
                             <input class="form-control" id="nama" name="nama" aria-describedby="namaHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
+                            <label for="inputEmail" class="form-label">Email</label>
                             <input class="form-control" id="email" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="tanggal" class="form-label">Tanggal</label>
+                            <label for="inputTanggal" class="form-label">Tanggal</label>
                             <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="tanggalHelp">
                         </div>
                         <div class="d-grid gap-2">
