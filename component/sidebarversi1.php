@@ -92,12 +92,12 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <?php if($_SESSION['user']['email']=='admin'){ ?>
                     <!-- Menu Yang tersedia jika login sebagai admin -->
                     <div class="content-menu">
-                        <i class="fa  fa-books"></i>
+                        <i class="fa fa-book"></i>
                         <a href="../../page/adminPage/mainAdminPage.php" style="font-weight:600">Olah Buku</a>
                     </div>
 
                     <div class="content-menu">
-                        <i class="fa  fa-books"></i>
+                        <i class="fa  fa-book"></i>
                         <a href="../page/adminPage/ubahPwPage.php" style="font-weight:600">Ubah Password</a>
                     </div>
 
