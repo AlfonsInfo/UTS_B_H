@@ -43,7 +43,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
     <div class="card" style="max-width: 1500px;">
         <div class="row g-0">
             <div class="col-md-4">
-                <img src="../../img/assets/<?= isset($_SESSION['user']['nama_foto']) ? $_SESSION['user']['nama_foto'] : 'default-profile2.png'; ?>"
+                <img src="../../img/assets/<?= isset($_SESSION['user']['nama_foto']) ? $_SESSION['user']['nama_foto'] : 'default-profile.png'; ?>"
                     class="img-fluid rounded-start" alt="..." width="1000px">
             </div>
             <div class="col-md-8">
