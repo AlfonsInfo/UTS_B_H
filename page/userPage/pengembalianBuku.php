@@ -30,6 +30,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 }else{
                 while($data = mysqli_fetch_assoc($query)){
                     // var_dump($data);die;
+    
                 echo'
                     <tr>
                         <td>'.$data['nama_buku'].'</td>

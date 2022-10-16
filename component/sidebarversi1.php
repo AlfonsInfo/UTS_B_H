@@ -118,6 +118,13 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                         <a href="../userPage/pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
                     <div class="content-menu ">
+<<<<<<< HEAD
+                        <i class="fa fa-comment"></i>
+                        <a href="../userPage/feedbackPage.php" style="font-weight:600">Masukan dan Saran</a>
+                    </div>
+                    <!-- <div class="content-menu ">
+=======
+>>>>>>> f7ab08ec1beef77a3cf3cc0b30c90825ed9b189a
                         <i class="fa-solid fa-user-pen"></i>
                         <a href="../../page/userPage/editUserPage.php" style="font-weight:600">EDIT PROFILE</a>
                     </div>
