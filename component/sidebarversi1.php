@@ -121,6 +121,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                         <a href="../../page/userPage/editUserPage.php" style="font-weight:600">EDIT PROFILE</a>
                     </div>
                     <div class="content-menu ">
+                    <i class="fa-solid fa-clipboard"></i>
+                        <a href="../../page/crudPage/createDaftarKunjunganPage.php" style="font-weight:600">DAFTAR KUNJUNGAN</a>
+                    </div>
+                    <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
                         <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>
                     </div>

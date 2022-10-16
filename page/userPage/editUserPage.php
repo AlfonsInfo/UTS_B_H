@@ -40,7 +40,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
         <!-- <i class="fa-solid fa-hand-holding"></i> -->
         <!-- <h4 onclick="toggleEnable('namaUser','email','nama_foto')">Edit Profil</h4> -->
     </div>
-    <div class="card text-white bg-light ma-5 shadow" style="max-width: 1500px;">
+    <div class="card" style="max-width: 1500px;">
         <div class="row g-0">
             <div class="col-md-4">
                 <img src="../../img/assets/<?= isset($_SESSION['user']['nama_foto']) ? $_SESSION['user']['nama_foto'] : 'default-profile.png'; ?>"
