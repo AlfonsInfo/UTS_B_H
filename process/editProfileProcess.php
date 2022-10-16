@@ -29,13 +29,14 @@
                         if(mysqli_num_rows($query_e) == 0  && in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                             move_uploaded_file($file_tmp, '../img/assets/'.$nama);
                             $query = mysqli_query($con,
-                            "UPDATE user
-                            SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" )
-                                or die(mysqli_error($con)); // perintah mysql yang gagal dijalankan ditangani oleh perintah “or die”
+                            "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" )
+                            or die(mysqli_error($con)); 
+                                // var_dump($query);
+                                $updatedUser = mysqli_fetch_assoc($query);
+                                var_dump($updatedUser);
                             if($query){          
-                                $_SESSION['user']['nama_user'] = $nama_user;
-                                $_SESSION['user']['email'] = $email;  
-                                $_session['USER']['nama_sampul'] = $nama;                   
+                                // $_SESSION['user'] = $updatedUser; 
+                                // var_dump($_SESSION);die;        
                                 echo
                                     '<script>
                                     alert("Update Profile Success"); 
