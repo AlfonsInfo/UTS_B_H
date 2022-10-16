@@ -15,15 +15,15 @@
                 <div class="card-body">
                     <form action="../../process/createDaftarKunjunganProcess.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
-                            <label for="inputNama" class="form-label">Nama Pengunjung</label>
+                            <label for="nama" class="form-label">Nama Pengunjung</label>
                             <input class="form-control" id="nama" name="nama" aria-describedby="namaHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="inputEmail" class="form-label">Email</label>
+                            <label for="email" class="form-label">Email</label>
                             <input class="form-control" id="email" name="email" aria-describedby="emailHelp">
                         </div>
                         <div class="mb-3">
-                            <label for="inputTanggal" class="form-label">Tanggal</label>
+                            <label for="tanggal" class="form-label">Tanggal</label>
                             <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="tanggalHelp">
                         </div>
                         <div class="d-grid gap-2">
