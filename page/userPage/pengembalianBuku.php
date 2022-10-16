@@ -32,18 +32,20 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                     // var_dump($data);die;
                 echo'
                     <tr>
-                    <td>'.$data['nama_buku'].'</td>
-                    <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
-            <td>'.$data['status'].'</td>
-            <td>'.$data['tanggal_pengembalian'].'</td>
-            <td> 
-            <a href="../../process/pengembalianProcess.php?id='.$data['id_buku'].'&email='.$_SESSION['user']['email'].'" 
-                        onClick="return confirm ( \'Are you sure want to delete this 
-                        data?\')"> <i style="color: green" class="fa fa-book fa-lg"> Kembalikan</i>
-                        </a>
-            </td>            
-            </tr>';
-            }
+                        <td>'.$data['nama_buku'].'</td>
+                        <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
+                        <td>'.$data['status'].'</td>
+                        <td>'.$data['tanggal_pengembalian'].'</td>';
+                        
+                        // buat if untuk tombol hilang jika sudah kembalikan
+                        if($data['status'] == "dipinjam"){
+                            echo'
+                            <td> 
+                                <a href="../../process/pengembalianProcess.php?id_peminjaman='.$data['id_peminjaman'].'&id_buku='.$data['id_buku'].'" onClick="return confirm ( \'Anda yakin ingin mengembalikan buku?\')"> <i style="color: green" class="fa fa-book fa-lg"> Kembalikan</i> </a>
+                            </td>';
+                        }
+                    echo'</tr>';                                                                 
+                }
             }
             ?>
         </tbody>
