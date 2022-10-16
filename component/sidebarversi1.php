@@ -96,11 +96,11 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <!-- Login sebagai user  -->
                     <div class="content-menu">
                         <i class="fa-solid fa-hand-holding"></i>
-                        <a href="../../page/crudPage/readBukuPage.php" style="font-weight:600">PEMINJAMAN BUKU</a>
+                        <a href="../crudPage/readBukuPage.php" style="font-weight:600">PEMINJAMAN BUKU</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-film"></i>
-                        <a href="../pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
+                        <a href="../userPage/pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
                     <!-- <div class="content-menu ">
                         <i class="fa fa-film"></i>
