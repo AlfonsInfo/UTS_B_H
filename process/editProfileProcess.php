@@ -29,13 +29,19 @@
                         if(mysqli_num_rows($query_e) == 0  && in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                             move_uploaded_file($file_tmp, '../img/assets/'.$nama);
                             $query = mysqli_query($con,
-                            "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" )
-                            or die(mysqli_error($con)); 
+                            "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con)); 
                                 // var_dump($query);
-                                $updatedUser = mysqli_fetch_assoc($query);
-                                var_dump($updatedUser);
-                            if($query){          
-                                // $_SESSION['user'] = $updatedUser; 
+
+
+                                //update email di peminjaman
+                                $query2 = mysqli_query($con,
+                            "UPDATE peminjaman SET email_user = '$email' where email_user = '$sessionEmail'" ) or die(mysqli_error($con)); 
+
+                            $querycari = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or die(mysqli_error($con));
+                                $user = mysqli_fetch_assoc($querycari);
+                                // var_dump($cariUser);
+                            if($query && $query2){                                       
+                                $_SESSION['user'] = $user; 
                                 // var_dump($_SESSION);die;        
                                 echo
                                     '<script>
