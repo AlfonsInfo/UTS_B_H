@@ -37,9 +37,11 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                     <td>
                     <a href="../../process/pinjamProcess.php?id='.$data['id_buku'].'&email='.$_SESSION['user']['email'].'" 
                         onClick="return confirm ( \'Are you sure want to delete this 
-                        data?\')"> <i style="color: green" class="fa fa-book fa-lg"> Pinjam</i>
-                        </a>
-                    </td>
+                        data?\')"';if($data['jumlah_tersedia']==0){echo'class="disable"';};echo'> <i style="color: green" class="fa fa-book fa-lg"> Pinjam</i>
+                        </a>';
+                        if($data['jumlah_tersedia']==0){echo'
+                    <p class="text-danger";>Tidak Bisa Pinjam Buku, Jumlah Tersedia 0 </p>';}
+                    echo'</td>
                     </td>
                     </tr>';
                     $no++;

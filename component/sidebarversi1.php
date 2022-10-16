@@ -61,6 +61,15 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
     i {
         color: white;
     }
+
+    .disable {
+        pointer-events: none;
+        cursor: not-allowed;
+    }
+
+    /* .disable:hover {
+        cursor: not-allowed;
+    } */
     </style>
 </head>
 
@@ -73,10 +82,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                 <div class="menu">
                     <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->
                     <div>
-                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile2.png'; ?>"
+                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile.png'; ?>"
                             alt="foto profile" width="50px" style="margin-left:10px;border-radius:50px;">
                         <a
-                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin Nih Boss'; ?></a>
+                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin'; ?></a>
 
                     </div>
                     <!-- Akhir Bagian Foto Profile -->
@@ -84,8 +93,13 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <?php if($_SESSION['user']['email']=='admin'){ ?>
                     <!-- Menu Yang tersedia jika login sebagai admin -->
                     <div class="content-menu">
-                        <i class="fa  fa-books"></i>
-                        <a href="../page/" style="font-weight:600">Olah Buku</a>
+                        <i class="fa fa-book"></i>
+                        <a href="../../page/adminPage/mainAdminPage.php" style="font-weight:600">Olah Buku</a>
+                    </div>
+
+                    <div class="content-menu">
+                        <i class="fa  fa-book"></i>
+                        <a href="../page/adminPage/ubahPwPage.php" style="font-weight:600">Ubah Password</a>
                     </div>
 
                     <div class="content-menu ">
@@ -104,13 +118,20 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                         <a href="../userPage/pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
                     <div class="content-menu ">
+<<<<<<< HEAD
                         <i class="fa fa-comment"></i>
                         <a href="../userPage/feedbackPage.php" style="font-weight:600">Masukan dan Saran</a>
                     </div>
                     <!-- <div class="content-menu ">
+=======
+>>>>>>> f7ab08ec1beef77a3cf3cc0b30c90825ed9b189a
                         <i class="fa fa-film"></i>
                         <a href="../../page/userPage/editUserPage.php" style="font-weight:600">EDIT PROFILE</a>
-                    </div> -->
+                    </div>
+                    <div class="content-menu ">
+                    <i class="fa-solid fa-clipboard"></i>
+                        <a href="../../page/crudPage/createDaftarKunjunganPage.php" style="font-weight:600">DAFTAR KUNJUNGAN</a>
+                    </div>
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
                         <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>

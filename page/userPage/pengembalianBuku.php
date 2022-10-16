@@ -30,6 +30,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 }else{
                 while($data = mysqli_fetch_assoc($query)){
                     // var_dump($data);die;
+    
                 echo'
                     <tr>
                         <td>'.$data['nama_buku'].'</td>
@@ -41,7 +42,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                         if($data['status'] == "dipinjam"){
                             echo'
                             <td> 
-                                <a href="../../process/pengembalianProcess.php?id_peminjaman='.$data['id_peminjaman'].'&id_buku='.$data['id_buku'].'" onClick="return confirm ( \'Anda yakin ingin mengembalikan buku?\')"> <i style="color: green" class="fa fa-book fa-lg"> Kembalikan</i> </a>
+                                <a href="../../process/pengembalianProcess.php?id_peminjaman='.$data['id_peminjaman'].'&id_buku='.$data['id_buku'].'" onClick="return confirm ( \'Anda yakin ingin mengembalikan buku?\')"> <i style="color: green" class="fa fa-book fa-lg" > Kembalikan</i> </a>
                             </td>';
                         }
                     echo'</tr>';                                                                 
