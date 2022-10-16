@@ -8,7 +8,7 @@ if (isset($_GET['id']) && isset($_GET['email'])) {
     $tanggal_pinjam = date('Y-m-d');
     /* Menjumlahkan waktu dari awal dengan penambahan waktu yang telah ditentukan.*/
     $tanggal_kembali = date('Y-m-d', strtotime('+7 days', strtotime($tanggal_pinjam)));
-    $status = "Pinjam";
+    $status = "dipinjam";
     
     // if ($query) {
         $queryKurangJumlah = mysqli_query($con, "SELECT * FROM buku WHERE id_buku = '$id'") or die(mysqli_error($con));

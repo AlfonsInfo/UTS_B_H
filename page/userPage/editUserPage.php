@@ -52,10 +52,10 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
 
                     <!-- <h5 class="card-title-right">aaa</h5> -->
                     <div class="card-body">
-                        <form action="../../process/editProfileProcess.php" method="POST">
+                        <form action="../../process/editProfileProcess.php" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                 <label for="editNamaUser" class="form-label">Nama User</label>
-                                <input class="form-control" id="namaUser" name="namaUser"
+                                <input class="form-control" id="namaUser" name="nama_user"
                                     aria-describedby="namaUserHelp" value="<?= $_SESSION['user']['nama_user']?>"
                                     disabled>
                             </div>
@@ -71,7 +71,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                             </div>
                             <div class="d-grid gap-2">
 
-                                <button id="btnsave" type="submit" class="btn btn-primary" name="save"
+                                <button id="btnsave" type="submit" class="btn btn-primary" name="update"
                                     style="display:none">Save</button>
                             </div>
                         </form>
