@@ -15,7 +15,7 @@
     <nav class="navbar navbar-dark bg-dark fixed-top" style="background-color: #e3f2fd;">
         <div class="container">
             <a class="navbar-brand fw-bold" href="/PWB_KelompokH">TUBES - Kelompok H</a>
-        </div>
+        </div> 
     </nav>
     <div class="bg bg-light text-dark">
         <div class="container min-vh-100 d-flex align-items-center justify-content-center">

@@ -30,7 +30,7 @@
                         </div>
                         <div class="mb-3">
                             <label for="inputPassword" class="form-label">Password</label>
-                            <input class="form-control" id="password" name="password" aria-describedby="passwordHelp">
+                            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp">
                         </div>
                         <div class="mb-3">
                             <label for="inputEmail" class="form-label">Email</label>
