@@ -103,6 +103,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                         <i class="fa fa-film"></i>
                         <a href="../userPage/pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
+                    <div class="content-menu ">
+                        <i class="fa fa-comment"></i>
+                        <a href="../userPage/feedbackPage.php" style="font-weight:600">Masukan dan Saran</a>
+                    </div>
                     <!-- <div class="content-menu ">
                         <i class="fa fa-film"></i>
                         <a href="../../page/userPage/editUserPage.php" style="font-weight:600">EDIT PROFILE</a>
