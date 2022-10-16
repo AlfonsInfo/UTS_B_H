@@ -14,7 +14,7 @@
 
         $query1 = mysqli_query($con, "UPDATE buku SET jumlah_tersedia = '$jumlah' WHERE id_buku = '$id_buku'") or die(mysqli_error($con));
         if($queryUpdate && $query1){
-            echo'<script>alert("Berhasil Kembalikan Buku"); window.location = "../page/adminPage/mainAdminPage.php"</script>';
+            echo'<script>alert("Berhasil Kembalikan Buku"); window.location = "../page/userPage/pengembalianBuku.php"</script>';
         }else{
             echo'<script>alert("Kembalikan buku gagal dilakukan"); window.location = "../page/adminPage/mainAdminPage.php"</script>';
         }
