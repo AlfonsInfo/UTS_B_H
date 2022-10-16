@@ -61,6 +61,14 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
     i {
         color: white;
     }
+
+    .disable {
+        pointer-events: none;
+    }
+
+    .disable:hover {
+        cursor: not-allowed;
+    }
     </style>
 </head>
 
@@ -73,10 +81,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                 <div class="menu">
                     <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->
                     <div>
-                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile2.png'; ?>"
+                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile.png'; ?>"
                             alt="foto profile" width="50px" style="margin-left:10px;border-radius:50px;">
                         <a
-                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin Nih Boss'; ?></a>
+                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin'; ?></a>
 
                     </div>
                     <!-- Akhir Bagian Foto Profile -->
