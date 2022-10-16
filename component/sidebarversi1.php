@@ -85,7 +85,12 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <!-- Menu Yang tersedia jika login sebagai admin -->
                     <div class="content-menu">
                         <i class="fa  fa-books"></i>
-                        <a href="../page/" style="font-weight:600">Olah Buku</a>
+                        <a href="../../page/adminPage/mainAdminPage.php" style="font-weight:600">Olah Buku</a>
+                    </div>
+
+                    <div class="content-menu">
+                        <i class="fa  fa-books"></i>
+                        <a href="../page/adminPage/ubahPwPage.php" style="font-weight:600">Ubah Password</a>
                     </div>
 
                     <div class="content-menu ">
@@ -103,10 +108,10 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                         <i class="fa fa-film"></i>
                         <a href="../userPage/pengembalianBuku.php" style="font-weight:600">PENGEMBALIAN BUKU</a>
                     </div>
-                    <!-- <div class="content-menu ">
+                    <div class="content-menu ">
                         <i class="fa fa-film"></i>
                         <a href="../../page/userPage/editUserPage.php" style="font-weight:600">EDIT PROFILE</a>
-                    </div> -->
+                    </div>
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
                         <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>
