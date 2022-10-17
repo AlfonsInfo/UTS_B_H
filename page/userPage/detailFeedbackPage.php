@@ -21,7 +21,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
     <form action="../userPage/editFeedbackPage.php?id=<?php echo $id?>" method="post">
         <input type="hidden" name="id" value="<?php echo $id?>">
         <div class="form-group">
-            <label for="kritik">Kritik</label><br>
+            <label for="kritik">Kategori</label><br>
             <input type="text" name="kritik" id="saran" cols="60" rows="3" disabled="yes" value="<?php switch($data['Nilai'])
                     {
                         case 1:
