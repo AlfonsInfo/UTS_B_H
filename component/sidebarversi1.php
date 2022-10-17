@@ -132,11 +132,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <div class="content-menu ">
                         <i class="fa fa-sign-out"></i>
                         <a href="../../process/logoutProcess.php" style="font-weight:600">&nbspLogout</a>
-<<<<<<< HEAD
-                    </div>                    
-=======
                     </div>
->>>>>>> 75edb52f9126b3d2a9154f1c65282c1eb5ff1ec3
                     <?php }?>
                     <hr>
                 </div>
