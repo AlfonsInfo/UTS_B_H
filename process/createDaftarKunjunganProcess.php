@@ -20,7 +20,7 @@
                 $_SESSION = $query;                         
                 echo
                 '<script> alert("Berhasil Mendaftar"); 
-                                window.location = "../page/adminPage/mainAdminPage.php"
+                                window.location = "../page/crudPage/editDaftarKunjunganPage.php"
                                 </script>';
                         }
                         else{
