@@ -5,12 +5,14 @@
         
         $id = $_POST['id'];
         $masukan = $_POST['masukan'];
-        $saran = $_POST['saran'];
-        $query_e = mysqli_query($con, "UPDATE feedback SET masukan='$masukan', saran='$saran' WHERE id_feedback='$id'") or die(mysqli_error($con));
+        $kritik = $_POST['kritik'];
+        $nilai = $_POST['nilai'];
+        // var_dump($_POST);die;
+        $query_e = mysqli_query($con, "UPDATE feedback SET masukan='$masukan', kritik='$kritik', nilai=$nilai WHERE id_feedback='$id'") or die(mysqli_error($con));
         if($query_e){                                
              echo
                                     '<script>
-                                    alert("Saran dan Masukan Berubah!"); 
+                                    alert("Saran dan Masukan Berhasil diubah, Terimakasih !!"); 
                                     window.location = "../page/userPage/feedbackPage.php"
                                     </script>';
                             }

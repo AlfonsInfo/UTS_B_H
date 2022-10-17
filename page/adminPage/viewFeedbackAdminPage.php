@@ -70,7 +70,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                     }
                     echo'</td>
                     <td>
-                    <a href="../../page/userPage/detailFeedbackPage.php?id=' . $data['id_feedback'] . '"  
+                    <a href="../../page/adminPage/detailFeedbackAdminPage.php?id=' . $data['id_feedback'] . '"  
                     <i style="color: green" class="fa fa-eye fa-2x"></i>';
                     if($data['email_user']==$_SESSION['user']['email'])
                     echo'

@@ -1,20 +1,25 @@
 <?php
-
+    var_dump($_POST);die;
+    // echo '<br>';
+    // var_dump($_GET);die;
     if(isset($_POST['submit'])){
         include('../db.php');
-        
-        $email = $_POST['email'];
-        $saran = $_POST['saran'];
-        $masukan = $_POST['masukan'];
-        $nilai = $_POST['nilai'];
-        $status = false;
+
+        // $status = 1;
+        $id = $_GET['id'];
+        // var_dump($id);die;
+        // $id = $_POST['id'];
+        // $masukan = $_POST['masukan'];
+        // $kritik = $_POST['kritik'];
+        // $nilai = $_POST['nilai'];
+        // $status = $_POST['status'];
         // var_dump($_POST);die;
-        $query_e = mysqli_query($con, "INSERT INTO feedback(email_user, kritik, masukan,status,nilai) VALUE ('$email','$saran','$masukan','$status','$nilai')") or die(mysqli_error($con));
+        $query_e = mysqli_query($con, "UPDATE feedback SET status=1 WHERE id_feedback='$id'") or die(mysqli_error($con));
         if($query_e){                                
              echo
                                     '<script>
-                                    alert("Saran dan Masukan Terkirim, Terimakasih !!"); 
-                                    window.location = "../page/userPage/feedbackPage.php"
+                                    alert("Saran dan Masukan Berhasil ditandai sudah dibaca, Terimakasih !!"); 
+                                    window.location = "../page/adminPage/viewFeedbackAdminPage.php"
                                     </script>';
                             }
                             else{

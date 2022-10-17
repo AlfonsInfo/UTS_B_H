@@ -1,4 +1,5 @@
 <?php
+
     //Variabel untuk nama title
     $pagetitle = "Peminjaman Buku";
     //Hubungkan halaman dengan sidebar
@@ -17,11 +18,11 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
         <h4>Detail Kritik dan Masukan</h4>
     </div>
     <hr>
-    <form action="../userPage/editFeedbackPage.php?id=<?php echo $id?>" method="post">
+    <form action="../../process/AdminReadFeedBack.php?id=<?=$id?>&status=<?= $data['status'] ?>" method="POST">
         <input type="hidden" name="id" value="<?php echo $id?>">
         <div class="form-group">
-            <label for="kritik">Kritik</label><br>
-            <input type="text" name="kritik" id="saran" cols="60" rows="3" disabled="yes" value="<?php switch($data['Nilai'])
+            <label for="kritik">Kategori</label><br>
+            <input type="text" name="nilai" id="saran" cols="60" rows="3" disabled="yes" value="<?php switch($data['Nilai'])
                     {
                         case 1:
                             echo "Jelek!!";
@@ -51,7 +52,11 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
             <label for="exampleInputPassword1">Masukan</label><br>
             <textarea name="masukan" id="masukan" cols="60" rows="10" disabled><?php echo $data['masukan']?></textarea>
         </div>
-        <button type="submit" class="btn btn-success" name="submit"><i class="fa fa-edit"></i> Edit</button>
+        <?php if($data['status']==1){
+
+        }else{
+            echo '<button type="submit" class="btn btn-success" name="submit"><i class="fa fa-edit"></i> Checked</button>';
+        }?>
     </form>
 
 </div>
