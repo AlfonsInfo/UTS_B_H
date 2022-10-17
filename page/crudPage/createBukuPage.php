@@ -25,11 +25,12 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
         </div>
         <div>
             <label for="jumlah_buku">Jumlah Buku</label>
-            <input type="number" class="form-control" id="jumlah_buku" name="jumlah_buku" placeholder="Masukkan Jumlah Buku">
+            <input type="number" class="form-control" id="jumlah_buku" name="jumlah_buku"
+                placeholder="Masukkan Jumlah Buku">
         </div>
 
         <div class="d-grid gap-2">
-                            <button type="submit" class="btn btn-primary" name="create">Simpan</button>
+            <button type="submit" class="btn btn-primary" name="create">Simpan</button>
         </div>
     </form>
 </div>
