@@ -85,28 +85,75 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
             </thead>
             <tbody>
                 <?php 
+
+                
                 // $dataPeminjaman = mysqli_query($con, "SELECT * FROM peminjaman inner join buku  on peminjaman.id_buku = buku.id_buku WHERE status = 'dipinjam' AND id_buku='$id_buku' ") or die(mysqli_error($con));
                 $dataPeminjaman = mysqli_query($con, "SELECT * FROM peminjaman inner join buku  on peminjaman.id_buku = buku.id_buku WHERE peminjaman.status='dipinjam' AND  peminjaman.id_buku= '$id_buku'  ") or die(mysqli_error($con));
-                
                 // var_dump(mysqli_fetch_assoc($query));die;
                 if (mysqli_num_rows($dataPeminjaman) == 0) {
                     echo '<tr> <td colspan="7"> Tidak ada data </td> </tr>';
                 }else{
-                while($data = mysqli_fetch_assoc($dataPeminjaman)){
-                    // var_dump($data);die;
-                    $kembalian = $data['tanggal_pengembalian'];
-
-                    /* Menjumlahkan waktu dari awal dengan penambahan waktu yang telah ditentukan.*/
-                    $tanggal_pinjam = date('Y-m-d', strtotime('-7 days', strtotime($kembalian)));
-                echo'
-                    <tr>
-                        <td>'.$data['email_user'].'</td>
+                    while($data = mysqli_fetch_assoc($dataPeminjaman)){
+                        // var_dump($data);die;
+                        $emailPeminjam = $data['email_user'];
+                        $dataPeminjam = mysqli_fetch_assoc(mysqli_query($con, "SELECT * FROM user where email = '$emailPeminjam'"));
+                        $kembalian = $data['tanggal_pengembalian'];
+                        // var_dump($dataPeminjam);die;
+                        /* Menjumlahkan waktu dari awal dengan penambahan waktu yang telah ditentukan.*/
+                        $tanggal_pinjam = date('Y-m-d', strtotime('-7 days', strtotime($kembalian)));
+                        echo'
+                        <tr>
+                        <td>'.$data['email_user'].'<i data-bs-toggle="modal" data-bs-target="#modal'.$data['id_peminjaman'].'"" style="color: blue; margin-left:10px" class="fa fa-eye "></i></td>
                         <td>'.$tanggal_pinjam.'</td>
                         <td>'.$data['tanggal_pengembalian'].'</td>';
-                    echo'</tr>';                                                                 
-                }
-            }
-            ?>
+                        echo'</tr>';    
+                        // var_dump($dataPeminjam);
+                        ?>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="modal<?=$data['id_peminjaman']?>" data-bs-backdrop="static"
+                    data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="card">
+                                    <img src="../../img/assets/<?=$dataPeminjam['nama_foto']?>" class="card-img-top"
+                                        alt="...">
+                                    <div class="card-body">
+                                        <h5 class="card-title"><?=$dataPeminjam['nama_user']?></h5>
+                                        <p class="card-text"><?= $dataPeminjam['email']?></p>
+                                        <p class="card-text">buku mulai dipinjam <?=$dataPeminjam['nama_user']?> pada
+                                            tanggal <?= $tanggal_pinjam?> ,pengembalian harus dilakukan paling akhiri
+                                            pada tanggal <?= $kembalian?> </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Understood</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php
+           
+                        }
+                        }
+
+                        
+                        ?>
+
+
+
+
             </tbody>
         </table>
     </div>

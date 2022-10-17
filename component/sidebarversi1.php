@@ -67,6 +67,8 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
         cursor: not-allowed;
     }
 
+
+
     /* .disable:hover {
         cursor: not-allowed;
     } */
