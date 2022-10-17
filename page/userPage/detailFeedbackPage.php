@@ -8,6 +8,7 @@
     $id = $_GET['id'];
 $user = mysqli_query($con, "SELECT * FROM feedback WHERE id_feedback='$id'") or die(mysqli_error($con));
 $data = mysqli_fetch_array($user);
+// var_dump($data);
 ?>
 <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
 solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 
@@ -51,7 +52,9 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
             <label for="exampleInputPassword1">Masukan</label><br>
             <textarea name="masukan" id="masukan" cols="60" rows="10" disabled><?php echo $data['masukan']?></textarea>
         </div>
+        <?php if($data['email_user'] == $_SESSION['user']['email']){?>
         <button type="submit" class="btn btn-success" name="submit"><i class="fa fa-edit"></i> Edit</button>
+        <?php }?>
     </form>
 
 </div>
