@@ -34,7 +34,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
 0.19);">
     <div class="body d-flex justify-content-between">
         <h4>PROFILE</h4>
-        <button type="button" class="btn btn-outline-primary"
+        <button type="button" class="btn btn-outline-warning"
             onclick="toggleEnable('namaUser','email','nama_foto','btnsave')">Edit
             Data</button>
         <!-- <i class="fa-solid fa-hand-holding"></i> -->
