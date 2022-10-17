@@ -31,13 +31,11 @@
 <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
 solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 
 0.19);">
-<<<<<<< HEAD
     <div class="body d-flex justify-content-between">
         <h4>Kunjungan</h4>        
         <button type="button" class="btn btn-outline-primary"><a href="../process/deleteDaftarKunjuganProcess.php?id='.$_SESSION['kunjungan']['id'].'" onClick="return confirm ( \'Are you sure want to delete this data?\')"></a>Delete Data</button>
         <button type="button" class="btn btn-outline-primary"
             onclick="toggleEnable('nama','email','tanggal','btnsave')">Edit
-=======
     <h4>Kunjungan</h4>
     <div style="display:flex; justify-content:flex-end; width:100%; padding:0;">
         <button type="button" class="btn btn-outline-danger">Delete
@@ -45,13 +43,11 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
         <span style="width: 15px"></span>
         <button type="button" class="btn btn-outline-warning"
             onclick="toggleEnable('namaUser','email','nama_foto','btnsave')">Edit
->>>>>>> 75edb52f9126b3d2a9154f1c65282c1eb5ff1ec3
             Data</button>
         <!-- <i class="fa-solid fa-hand-holding"></i> -->
         <!-- <h4 onclick="toggleEnable('namaUser','email','nama_foto')">Edit Profil</h4> -->
     </div>
     <div class="card" style="max-width: 1500px;">
-<<<<<<< HEAD
                     <!-- <h5 class="card-title inline bg-dark">Profile</h5> -->
                     
                     <!-- <h5 class="card-title-right">aaa</h5> -->
@@ -92,7 +88,6 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                             </div>
                         </form>
                     </div>
-=======
         <!-- <h5 class="card-title inline bg-dark">Profile</h5> -->
 
         <!-- <h5 class="card-title-right">aaa</h5> -->
@@ -102,7 +97,6 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                     <label for="editNama" class="form-label">Nama Pengunjung</label>
                     <input class="form-control" id="nama" name="nama" aria-describedby="namaHelp"
                         value="<?= $_SESSION['kunjungan']['nama']?>" disabled>
->>>>>>> 75edb52f9126b3d2a9154f1c65282c1eb5ff1ec3
                 </div>
                 <div class="mb-3">
                     <label for="editEmail" class="form-label">Email</label>
