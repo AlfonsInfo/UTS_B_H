@@ -1,5 +1,5 @@
 <?php
-    var_dump($_POST);die;
+    // var_dump($_POST);die;
     // echo '<br>';
     // var_dump($_GET);die;
     if(isset($_POST['submit'])){

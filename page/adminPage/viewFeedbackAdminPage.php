@@ -9,9 +9,6 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
 0.19);">
     <div class="body d-flex justify-content-between">
         <h4>LIST KRITIK DAN MASUKAN</h4><br>
-        <a class="border-0" href="../userPage/addFeedbackPage.php">
-            <i style="color: red" class="fa fa-plus fa-2x"></i>
-        </a>
     </div>
     <hr>
     <table class="table ">
