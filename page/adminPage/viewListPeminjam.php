@@ -33,7 +33,7 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
                     <div class="card-body">
                         <form action="" method="" enctype="">
                             <div>
-                                <label class="form-label">Nama User</label>
+                                <label class="form-label">ID Buku</label>
 
                                 <input type="text" class="form-control" id="id" name="id_buku"
                                     value="<?=$dataBuku['id_buku'];  ?>" style="margin-bottom: 20px;" disabled>

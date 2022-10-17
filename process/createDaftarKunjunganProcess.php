@@ -16,7 +16,8 @@
             $query = mysqli_query($con,
             "INSERT INTO kunjungan(nama, email, tanggal) 
             VALUES ('$nama', '$email', '$tanggal')") or die(mysqli_error($con)); // perintah mysql yang gagal dijalankan ditangani oleh perintah “or die”
-            if($query){                                
+            if($query){       
+                $_SESSION = $query;                         
                 echo
                 '<script> alert("Berhasil Mendaftar"); 
                                 window.location = "../page/adminPage/mainAdminPage.php"

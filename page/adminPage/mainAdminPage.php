@@ -41,7 +41,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                         <a href="../adminPage/viewListPeminjam.php?id_buku='.$data['id_buku'].'">                        
                             <i style="color: blue" class="fa fa-eye fa-2x"></i>
                         </a>
-                        <a href="../adminPage/editBukuAdminPage.php?id='.$data['id_buku'].'" 
+                        <a href="../adminPage/editBukuAdminPage.php?id_buku='.$data['id_buku'].'" 
                             onClick="return confirm ( \'Are you sure want to edit this data?\')">                        
                             <i style="color: green" class="fa fa-pencil fa-2x"></i>
                         </a>
