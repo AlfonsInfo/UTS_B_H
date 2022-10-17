@@ -17,13 +17,13 @@
             '<script> alert("Email not found!"); window.location = "../page/userPage/loginPage.php" </script>';
         }else{
             $user = mysqli_fetch_assoc($query);
-            if(password_verify($password, $user['password']) || $password == 'admin'){
+            if(password_verify($password, $user['password']) || $password == $user['password']){
                 // session adalah variabel global sementara yang disimpen di server
                 // buat mulai sessionnya pake session_start()
                 //isLogin ini temp variable yang gunanya buat ngecek nanti apakah sdh login ato belum
                 $_SESSION['isLogin'] = true;
                 $_SESSION['user'] = $user;
-                if($email == "admin" && $password == "admin"){ //login sebagai admin, kirim ke menu admin
+                if($email == "admin"){ //login sebagai admin, kirim ke menu admin
                     echo '<script> alert("Login As Admin Success"); window.location = "../page/adminPage/mainAdminPage.php" </script>';
                 }else{ //login sebagai user, kirim ke menu user
                     echo '<script> alert("Login As User Success"); window.location = "../page/crudPage/readBukuPage.php" </script>';

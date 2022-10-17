@@ -80,18 +80,18 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                 <h2 class="text-light text-center pt-2">LIBRARY</h2>
                 <hr>
                 <div class="menu">
-                    <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->
-                    <div>
-                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile.png'; ?>"
-                            alt="foto profile" width="50px" style="margin-left:10px;border-radius:50px;">
-                        <a
-                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin'; ?></a>
-
-                    </div>
+                    <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->                    
                     <!-- Akhir Bagian Foto Profile -->
                     <!-- Menu-menu -->
                     <?php if($_SESSION['user']['email']=='admin'){ ?>
                     <!-- Menu Yang tersedia jika login sebagai admin -->
+                    <div>
+                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile.png'; ?>"
+                            alt="foto profile" width="50px" style="margin-left:10px;border-radius:50px;">
+                        <a
+                            href="../../page/adminPage/ubahPasswordPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin'; ?></a>
+
+                    </div>
                     <div class="content-menu">
                         <i class="fa fa-book"></i>
                         <a href="../../page/adminPage/mainAdminPage.php" style="font-weight:600">Olah Buku</a>
@@ -113,6 +113,13 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                     <!--Akhir dari menu login sebagai Admin -->
                     <?php }else{?>
                     <!-- Login sebagai user  -->
+                    <div>
+                        <img src="<?= isset($_SESSION['user']['nama_foto']) ?  url().'/img/assets/'.$_SESSION['user']['nama_foto']: url().'/img/assets/default-profile.png'; ?>"
+                            alt="foto profile" width="50px" style="margin-left:10px;border-radius:50px;">
+                        <a
+                            href="../../page/userPage/editUserPage.php"><?= isset($_SESSION['user']['nama_foto']) ?  $_SESSION['user']['nama_user'] : 'Admin'; ?></a>
+
+                    </div>
                     <div class="content-menu">
                         <i class="fa-solid fa-hand-holding"></i>
                         <a href="../crudPage/readBukuPage.php" style="font-weight:600">Peminjaman Buku</a>
