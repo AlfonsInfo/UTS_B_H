@@ -80,7 +80,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
                 <h2 class="text-light text-center pt-2">LIBRARY</h2>
                 <hr>
                 <div class="menu">
-                    <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->                    
+                    <!-- Foto Profile dan Link ke Profile (Edit dan Show Profile) -->
                     <!-- Akhir Bagian Foto Profile -->
                     <!-- Menu-menu -->
                     <?php if($_SESSION['user']['email']=='admin'){ ?>
@@ -99,7 +99,7 @@ EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="a
 
                     <div class="content-menu">
                         <i class="fa  fa-book"></i>
-                        <a href="../userPage/editUserPage.php" style="font-weight:600">Ubah Password</a>
+                        <a href="../adminPage/ubahPasswordPage.php" style="font-weight:600">Ubah Password</a>
                     </div>
                     <div class="content-menu ">
                         <i class="fa fa-comment"></i>

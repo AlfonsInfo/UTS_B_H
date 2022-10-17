@@ -24,7 +24,7 @@
                                     $_SESSION['kunjungan']['email'] = "";
                                     $_SESSION['kunjungan']['tanggal'] = "";
                                 }
-                        ?>;
+                        ?>
             <form action="../../process/createDaftarKunjunganProcess.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="inputNama" class="form-label">Nama Pengunjung</label>
