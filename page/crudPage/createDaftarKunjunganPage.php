@@ -14,6 +14,16 @@
     </div>
             <div class="card" style="max-width: 1500px;">
                 <div class="card-body">
+                        <?php
+                                $sessionEmail = $_SESSION['user']['email'];
+                                $query = mysqli_query($con, "SELECT * FROM kunjungan WHERE email = '$sessionEmail'") or die(mysqli_error($con));                                
+
+                                if(mysqli_num_rows($query) != 0){
+                                    $_SESSION['kunjungan']['nama'] = "";
+                                    $_SESSION['kunjungan']['email'] = "";
+                                    $_SESSION['kunjungan']['tanggal'] = "";
+                                }
+                        ?>;
                     <form action="../../process/createDaftarKunjunganProcess.php" method="post" enctype="multipart/form-data">
                         <div class="mb-3">
                             <label for="inputNama" class="form-label">Nama Pengunjung</label>
