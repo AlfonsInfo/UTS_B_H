@@ -10,7 +10,7 @@
         $password = $_POST['password'];
         // Melakukan insert ke databse dengan query dibawah ini
         $query = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or die(mysqli_error($con));
-        // var_dump($query);die;
+        
         // ini buat ngecek kalo misalnya hasil dari querynya == 0 ato ga ketemu -> emailnya tdk ditemukan
         if(mysqli_num_rows($query) == 0){
             echo

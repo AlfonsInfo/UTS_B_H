@@ -1,5 +1,4 @@
 <?php
-    
     if(isset($_GET['id'])){
         include ('../db.php');
         $id = $_GET['id'];

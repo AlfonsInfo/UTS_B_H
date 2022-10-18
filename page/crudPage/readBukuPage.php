@@ -27,34 +27,30 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                     echo '<tr> <td colspan="7"> Tidak ada data </td> </tr>';
                 }else{
                     $no = 1;
-                while($data = mysqli_fetch_assoc($query)){
-                echo'
-                    <tr>
-                    <th scope="row">'.$no.'</th>
-                    <td>'.$data['nama_buku'].'</td>
-                    <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
-                    <td>'.$data['jumlah_tersedia'].'</td>
-                    <td>
-                    <a href="../../process/pinjamProcess.php?id='.$data['id_buku'].'&email='.$_SESSION['user']['email'].'" 
-                        onClick="return confirm ( \'Are you sure want to delete this 
-                        data?\')"';if($data['jumlah_tersedia']==0){echo'class="disable"';};echo'> <i style="color: green" class="fa fa-book fa-lg"> Pinjam</i>
-                        </a>';
-                        if($data['jumlah_tersedia']==0){echo'
-                    <p class="text-danger";>Tidak Bisa Pinjam Buku, Jumlah Tersedia 0 </p>';}
-                    echo'</td>
-                    </td>
-                    </tr>';
-                    $no++;
-                }
+                    while($data = mysqli_fetch_assoc($query)){
+                    echo'
+                        <tr>
+                        <th scope="row">'.$no.'</th>
+                        <td>'.$data['nama_buku'].'</td>
+                        <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
+                        <td>'.$data['jumlah_tersedia'].'</td>
+                        <td>
+                        <a href="../../process/pinjamProcess.php?id='.$data['id_buku'].'&email='.$_SESSION['user']['email'].'" 
+                            onClick="return confirm ( \'Are you sure want to delete this 
+                            data?\')"';if($data['jumlah_tersedia']==0){echo'class="disable"';};echo'> <i style="color: green" class="fa fa-book fa-lg"> Pinjam</i>
+                            </a>';
+                            if($data['jumlah_tersedia']==0){echo'
+                        <p class="text-danger";>Tidak Bisa Pinjam Buku, Jumlah Tersedia 0 </p>';}
+                        echo'</td>
+                        </td>
+                        </tr>';
+                        $no++;
+                    }
                 }
 ?>
         </tbody>
     </table>
 </div>
-</aside>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-</body>
-
-</html>

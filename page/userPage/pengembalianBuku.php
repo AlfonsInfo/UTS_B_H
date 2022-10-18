@@ -28,26 +28,24 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
                 if (mysqli_num_rows($query) == 0) {
                     echo '<tr> <td colspan="7"> Tidak ada data </td> </tr>';
                 }else{
-                while($data = mysqli_fetch_assoc($query)){
-                    // var_dump($data);die;
-    
-                echo'
-                    <tr>
-                        <td>'.$data['nama_buku'].'</td>
-                        <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
-                        <td>'.$data['status'].'</td>
-                        <td>'.$data['tanggal_pengembalian'].'</td>';
-                        
-                        // buat if untuk tombol hilang jika sudah kembalikan
-                        if($data['status'] == "dipinjam"){
-                            echo'
-                            <td> 
-                                <a href="../../process/pengembalianProcess.php?id_peminjaman='.$data['id_peminjaman'].'&id_buku='.$data['id_buku'].'" onClick="return confirm ( \'Anda yakin ingin mengembalikan buku?\')"> <i style="color: green" class="fa fa-book fa-lg" > Kembalikan</i> </a>
-                            </td>';
-                        }
-                    echo'</tr>';                                                                 
+                    while($data = mysqli_fetch_assoc($query)){                    
+                        echo'
+                            <tr>
+                                <td>'.$data['nama_buku'].'</td>
+                                <td><img src=../../img/assets/'.$data['nama_sampul'].' alt =gambarsampul width=300px></td>
+                                <td>'.$data['status'].'</td>
+                                <td>'.$data['tanggal_pengembalian'].'</td>';
+                                
+                                // buat if untuk tombol hilang jika sudah kembalikan
+                                if($data['status'] == "dipinjam"){
+                                    echo'
+                                    <td> 
+                                        <a href="../../process/pengembalianProcess.php?id_peminjaman='.$data['id_peminjaman'].'&id_buku='.$data['id_buku'].'" onClick="return confirm ( \'Anda yakin ingin mengembalikan buku?\')"> <i style="color: green" class="fa fa-book fa-lg" > Kembalikan</i> </a>
+                                    </td>';
+                                }
+                        echo'</tr>';                                                                 
+                    }
                 }
-            }
             ?>
         </tbody>
     </table>
@@ -56,6 +54,3 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-</body>
-
-</html>

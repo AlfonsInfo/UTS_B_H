@@ -16,15 +16,15 @@
     <div class="card" style="max-width: 1500px;">
         <div class="card-body">
             <?php
-                                $sessionEmail = $_SESSION['user']['email'];
-                                $query = mysqli_query($con, "SELECT * FROM kunjungan WHERE email = '$sessionEmail'") or die(mysqli_error($con));                                
+                $sessionEmail = $_SESSION['user']['email'];
+                $query = mysqli_query($con, "SELECT * FROM kunjungan WHERE email = '$sessionEmail'") or die(mysqli_error($con));                                
 
-                                if(mysqli_num_rows($query) != 0){
-                                    $_SESSION['kunjungan']['nama'] = "";
-                                    $_SESSION['kunjungan']['email'] = "";
-                                    $_SESSION['kunjungan']['tanggal'] = "";
-                                }
-                        ?>
+                if(mysqli_num_rows($query) != 0){
+                    $_SESSION['kunjungan']['nama'] = "";
+                    $_SESSION['kunjungan']['email'] = "";
+                    $_SESSION['kunjungan']['tanggal'] = "";
+                }
+            ?>
             <form action="../../process/createDaftarKunjunganProcess.php" method="post" enctype="multipart/form-data">
                 <div class="mb-3">
                     <label for="inputNama" class="form-label">Nama Pengunjung</label>
@@ -45,7 +45,6 @@
         </div>
     </div>
 </div>
-<!-- Option 1: Bootstrap Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>

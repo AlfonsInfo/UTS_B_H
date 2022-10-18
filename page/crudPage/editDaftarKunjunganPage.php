@@ -75,43 +75,28 @@ solid #D40013; boxshadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0
     ?>       
 
     </div>    
-    <div class="card" style="max-width: 1500px;">
-                    <!-- <h5 class="card-title inline bg-dark">Profile</h5> -->
-                    
-                    <!-- <h5 class="card-title-right">aaa</h5> -->
-                    <div class="card-body">
-                        <form action="../../process/editDaftarKunjunganProcess.php" method="POST" enctype="multipart/form-data">                               
-                            <div class="mb-3">
-                                <label for="editNama" class="form-label">Nama Pengunjung</label>
-                                <input class="form-control" id="nama" name="nama" aria-describedby="namaHelp" 
-                                    value="<?= $_SESSION['kunjungan']['nama']?>"disabled>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editEmail" class="form-label">Email</label>
-                                <input class="form-control" id="email" name="email" aria-describedby="emailHelp"
-                                    value="<?= $_SESSION['kunjungan']['email']?>" disabled>
-                            </div>
-                            <div class="mb-3">
-                                <label for="editTanggal" class="form-label">Tanggal</label>
-                                <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="tanggalHelp"
-                                    value="<?= $_SESSION['kunjungan']['tanggal']?>" disabled>
-                            </div>
-                            <div class="d-grid gap-2">
-                                <button id="btnsave" type="submit" class="btn btn-primary" name="update"
-                                    style="display:none">Save</button>
-                            </div>
-                        </form>
-                    </div>
+    <div class="card" style="max-width: 1500px;">                    
+        <div class="card-body">
+            <form action="../../process/editDaftarKunjunganProcess.php" method="POST" enctype="multipart/form-data">                               
+                <div class="mb-3">
+                    <label for="editNama" class="form-label">Nama Pengunjung</label>
+                    <input class="form-control" id="nama" name="nama" aria-describedby="namaHelp" value="<?= $_SESSION['kunjungan']['nama']?>"disabled>
+                </div>
+                <div class="mb-3">
+                        <label for="editEmail" class="form-label">Email</label>
+                        <input class="form-control" id="email" name="email" aria-describedby="emailHelp" value="<?= $_SESSION['kunjungan']['email']?>" disabled>
+                </div>
+                <div class="mb-3">
+                    <label for="editTanggal" class="form-label">Tanggal</label>
+                    <input type="date" class="form-control" id="tanggal" name="tanggal" aria-describedby="tanggalHelp" value="<?= $_SESSION['kunjungan']['tanggal']?>" disabled>
+                </div>
+                <div class="d-grid gap-2">
+                    <button id="btnsave" type="submit" class="btn btn-primary" name="update" style="display:none">Save</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-</div>
-</aside>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-</body>`
-
-<!-- </html> -->

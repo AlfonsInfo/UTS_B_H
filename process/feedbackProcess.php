@@ -8,35 +8,17 @@
         $masukan = $_POST['masukan'];
         $nilai = $_POST['nilai'];
         $status = false;
-        // var_dump($_POST);die;
+
         $query_e = mysqli_query($con, "INSERT INTO feedback(email_user, kritik, masukan,status,nilai) VALUE ('$email','$saran','$masukan','$status','$nilai')") or die(mysqli_error($con));
         if($query_e){                                
              echo
-                                    '<script>
-                                    alert("Saran dan Masukan Terkirim, Terimakasih !!"); 
-                                    window.location = "../page/userPage/feedbackPage.php"
-                                    </script>';
-                            }
-                            else{
-                                echo
-                                    '<script>
-                                    alert("Saran dan Masukan tidak terkirim!");
-                                    </script>';
-                            }
-                        
-                    // }else{
-                    //     echo
-                    //     '<script>
-                    //     alert("Email must be unique!"); window.location = "../page/registerPage.php"
-                    //     </script>';
-                    // }
-                // }else{
-                //     echo
-                //     '<script>
-                //     alert("Phonenum must be unique!"); window.location = "../page/registerPage.php"
-                //     </script>';
-                // }
-  
+                '<script>
+                    alert("Saran dan Masukan Terkirim, Terimakasih !!"); window.location = "../page/userPage/feedbackPage.php"
+                </script>';
+        }
+        else{
+            echo '<script> alert("Saran dan Masukan tidak terkirim!"); </script>';
+        }          
     }else{
         echo
             '<script>

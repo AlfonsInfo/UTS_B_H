@@ -6,34 +6,33 @@
     
     echo'
     <script>
-    function myFunction(checkbox) {
-      var checkBox = document.getElementById(checkbox);
-      
-      var text = document.getElementById("text");
-      if (checkBox.checked == true){
-          text.style.display = "block";
-      } else {
-         text.style.display = "none";
-      }
-  }
-  </script>
-    ';
+        function myFunction(checkbox) {
+            var checkBox = document.getElementById(checkbox);
+            
+            var text = document.getElementById("text");
+            if (checkBox.checked == true){
+                text.style.display = "block";
+            } else {
+                text.style.display = "none";
+            }
+        }
+    </script>';
 
-    // <?php
     $id = $_GET['id'];
-$user = mysqli_query($con, "SELECT * FROM feedback WHERE id_feedback='$id'") or die(mysqli_error($con));
-$data = mysqli_fetch_array($user);
+    $user = mysqli_query($con, "SELECT * FROM feedback WHERE id_feedback='$id'") or die(mysqli_error($con));
+    $data = mysqli_fetch_array($user);
 
-function checkChecked($value, $data)
-{
-    if($value==$data)
+    function checkChecked($value, $data)
     {
-        echo 'checked';
-    }else{
-        echo '';
+        if($value==$data)
+        {
+            echo 'checked';
+        }else{
+            echo '';
+        }
     }
-}
 ?>
+
 <div class="container p-3 m-4 h-100" style="background-color: #FFFFFF; border-top: 5px 
 solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 
 0.19);">
@@ -85,12 +84,7 @@ solid #D40013; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 
             </div>
             <button type="submit" class="btn btn-primary" name="submit"><i class="fa fa-plus"></i> Submit</button>
     </form>
-
 </div>
-</aside>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
 </script>
-</body>
-
-</html>

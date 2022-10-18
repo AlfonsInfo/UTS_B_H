@@ -14,7 +14,6 @@
         $file_tmp = $_FILES['nama_foto']['tmp_name'];
 
         $email = $_POST['email'];
-        // $password = password_hash($_POST['password'], PASSWORD_DEFAULT);
         $nama_user = $_POST['nama_user'];
         $sessionEmail = $_SESSION['user']['email'];
 
@@ -48,51 +47,37 @@
             }
             return false;
         }
-                        // Melakukan insert ke databse dengan query dibawah ini
-                        if(checkEmail()){
-                            if(empty($nama)){
-                                $query = mysqli_query($con,
-                                "UPDATE user SET nama_user = '$nama_user' , email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
-                            }else{
-                                if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-                                    move_uploaded_file($file_tmp, '../img/assets/'.$nama);
-                                    $query = mysqli_query($con,
-                                    "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
-                                }else{
-                                    echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
-                                }
-                            }                                                         
+            // Melakukan insert ke databse dengan query dibawah ini
+            if(checkEmail()){
+                if(empty($nama)){
+                    $query = mysqli_query($con, "UPDATE user SET nama_user = '$nama_user' , email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
+                }else{
+                    if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+                        move_uploaded_file($file_tmp, '../img/assets/'.$nama);
+                        $query = mysqli_query($con, "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
+                    }else{
+                        echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
+                    }
+                }                                                         
 
-                            //update email di peminjaman
-                            $query2 = mysqli_query($con,
-                            "UPDATE peminjaman SET email_user = '$email' where email_user = '$sessionEmail'" ) or die(mysqli_error($con)); 
+                //update email di peminjaman
+                $query2 = mysqli_query($con, "UPDATE peminjaman SET email_user = '$email' where email_user = '$sessionEmail'" ) or die(mysqli_error($con)); 
 
-                            $querycari = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or die(mysqli_error($con));
-                                $user = mysqli_fetch_assoc($querycari);                                
-                            if($query && $query2){                                       
-                                $_SESSION['user'] = $user;                                       
-                                echo
-                                    '<script>
-                                    alert("Update Profile Success"); 
-                                    window.location = "../page/userPage/editUserPage.php"
-                                    </script>';
-                            }
-                            else{
-                                echo
-                                    '<script>
-                                    alert("Update Failed");
-                                    </script>';
-                            }
-                        }else{
-                            if(checkEmail()==false){
-                                echo '<script> alert("Email must be unique!"); window.history.back() </script>';
-                            }
-                            // if(in_array($ekstensi, $ekstensi_diperbolehkan) !== true){
-                            //     echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
-                            // }
-                        }
-                        
-  
+                $querycari = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or die(mysqli_error($con));
+                $user = mysqli_fetch_assoc($querycari);                                
+                if($query && $query2){                                       
+                    $_SESSION['user'] = $user;                                       
+                    echo '<script> alert("Update Profile Success"); window.location = "../page/userPage/editUserPage.php" 
+                    </script>';
+                }
+                else{
+                    echo '<script> alert("Update Failed"); </script>';
+                }
+        }else{
+            if(checkEmail()==false){
+                echo '<script> alert("Email must be unique!"); window.history.back() </script>';
+            }                
+        }
     }else{
         echo
             '<script>
