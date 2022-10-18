@@ -22,7 +22,7 @@ if (isset($_GET['id']) && isset($_GET['email'])) {
                     // ('',4)");
             echo
             '<script>
-                    alert("Berhasil Pinjam Buku, Tekan OK maka akan di eksekusi4"); window.location = "../page/crudPage/readBukuPage.php"
+                    alert("Berhasil Pinjam Buku, Tekan OK maka akan di eksekusi"); window.location = "../page/crudPage/readBukuPage.php"
                     </script>';
         }
         else{
