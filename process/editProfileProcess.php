@@ -48,36 +48,29 @@
             }
             return false;
         }
-        // var_dump($emailFormEdit);var_dump($emailEditNumRow);die;
-        // var_dump(checkEmail());die;
-        // var_dump($emailFormEdit['email']);die;
-        // var_dump($emailSession['email']);die;
-        // var_dump($email);
-        // var_dump(mysqli_num_rows(($query_e)));
-        // var_dump($query_e);die;
-
-                // if(mysqli_num_rows($query_p) == 0){
-                    
-                    // if(mysqli_num_rows($query_e) == 0){
                         // Melakukan insert ke databse dengan query dibawah ini
-                        if(checkEmail()  && in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-                            move_uploaded_file($file_tmp, '../img/assets/'.$nama);
-                            $query = mysqli_query($con,
-                            "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con)); 
-                            // var_dump(mysqli_error($con));
-                                // var_dump($query);
+                        if(checkEmail()){
+                            if(empty($nama)){
+                                $query = mysqli_query($con,
+                                "UPDATE user SET nama_user = '$nama_user' , email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
+                            }else{
+                                if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+                                    move_uploaded_file($file_tmp, '../img/assets/'.$nama);
+                                    $query = mysqli_query($con,
+                                    "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con));
+                                }else{
+                                    echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
+                                }
+                            }                                                         
 
-
-                                //update email di peminjaman
-                                $query2 = mysqli_query($con,
+                            //update email di peminjaman
+                            $query2 = mysqli_query($con,
                             "UPDATE peminjaman SET email_user = '$email' where email_user = '$sessionEmail'" ) or die(mysqli_error($con)); 
 
                             $querycari = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or die(mysqli_error($con));
-                                $user = mysqli_fetch_assoc($querycari);
-                                // var_dump($cariUser);
+                                $user = mysqli_fetch_assoc($querycari);                                
                             if($query && $query2){                                       
-                                $_SESSION['user'] = $user; 
-                                // var_dump($_SESSION);die;        
+                                $_SESSION['user'] = $user;                                       
                                 echo
                                     '<script>
                                     alert("Update Profile Success"); 
@@ -94,9 +87,9 @@
                             if(checkEmail()==false){
                                 echo '<script> alert("Email must be unique!"); window.history.back() </script>';
                             }
-                            if(in_array($ekstensi, $ekstensi_diperbolehkan) !== true){
-                                echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
-                            }
+                            // if(in_array($ekstensi, $ekstensi_diperbolehkan) !== true){
+                            //     echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
+                            // }
                         }
                         
   

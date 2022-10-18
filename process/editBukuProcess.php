@@ -16,27 +16,29 @@
         $nama_buku = $_POST['nama_buku'];
         $jumlah_buku = $_POST['jumlah_buku'];
         $id_buku = $_GET['id_buku'];
-        // var_dump($id_buku);die;
-        if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
-            move_uploaded_file($file_tmp, '../img/assets/'.$nama);
+        
+        if(empty($nama)){
             $query = mysqli_query($con,
+            "UPDATE buku SET nama_buku = '$nama_buku', jumlah_tersedia = '$jumlah_buku' WHERE id_buku = $id_buku ") 
+             or die(mysqli_error($con));
+        }else{
+            if(in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+                move_uploaded_file($file_tmp, '../img/assets/'.$nama);
+                $query = mysqli_query($con,
                 "UPDATE buku SET nama_buku = '$nama_buku' ,nama_sampul = '$nama', jumlah_tersedia = '$jumlah_buku' WHERE id_buku = $id_buku ") 
-                 or die(mysqli_error($con)); // perintah mysql yang gagal dijalankan ditangani oleh perintah “or die”
-                if($query){                                
-                    echo
-                    '<script> alert("Berhasil UPDATE Buku"); 
-                                    window.location = "../page/adminPage/mainAdminPage.php"
-                                    </script>';
-                            }
-                            else{
-                                echo
-                                    '<script>
-                                    alert("Gagal Menambahkan Buku");                                    
-                                    </script>';
-                            }
-                        }else{                        
-                                echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';                            
-                        }
+                     or die(mysqli_error($con));
+            }else{
+                echo '<script> alert("Extensi Gambar harus JPG,JPEG, PNG!"); window.history.back() </script>';
+            }
+        }          
+                
+        if($query){                                
+            echo
+            '<script> alert("Berhasil UPDATE Buku"); window.location = "../page/adminPage/mainAdminPage.php"</script>';
+        }else{
+            echo
+            '<script> alert("Gagal Menambahkan Buku"); </script>';
+        }
     }else{
         echo
             '<script>
