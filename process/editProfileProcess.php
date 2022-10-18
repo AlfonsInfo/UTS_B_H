@@ -21,15 +21,50 @@
 
         $query_e = mysqli_query($con, "SELECT * FROM user WHERE email = '$email'") or
                 die(mysqli_error($con));
+        $query_e2 = mysqli_query($con, "SELECT * FROM user WHERE email = '$sessionEmail'") or
+                die(mysqli_error($con)); 
+        $emailFormEdit = mysqli_fetch_assoc($query_e) ; // kalau email yang dimasukin belum ada didatabase return null
+        $emailSession = mysqli_fetch_assoc($query_e2) ;  // Email yang sesuai dengan session
+        //Kondisi yang mungkin :  EmailFormEdit sama dengan yang ada didatabase (sama dengan emailsession atau dengan email yang lain)
+        $emailEditNumRow = mysqli_num_rows($query_e);
+        $emailSessionNumRow = mysqli_num_rows($query_e2);
+        // var_dump($emailFormEdit);die;
+        function checkEmail()
+        {
+            global $emailFormEdit;
+            global $emailSession;
+            global $emailEditNumRow;
+            global $emailSessionNumRow;
+            // Cek apakah ada email yang sama atau tidak, kalau null berarti tidak ada yang sama (benar-benar baru tidak sama dengan yg disession)
+            if($emailFormEdit == NULL){
+                    return true;
+                
+            }
+            // jika emailformedit tidak null berarti ada email yang sama didatabase, cek apakah email yang sama itu merupakan email awalnya, jika iya berarti bisa diedit
+            if($emailFormEdit['email']==$emailSession['email'])
+            {
+                // 1 dan 1
+                return true;
+            }
+            return false;
+        }
+        // var_dump($emailFormEdit);var_dump($emailEditNumRow);die;
+        // var_dump(checkEmail());die;
+        // var_dump($emailFormEdit['email']);die;
+        // var_dump($emailSession['email']);die;
+        // var_dump($email);
+        // var_dump(mysqli_num_rows(($query_e)));
+        // var_dump($query_e);die;
 
                 // if(mysqli_num_rows($query_p) == 0){
                     
                     // if(mysqli_num_rows($query_e) == 0){
                         // Melakukan insert ke databse dengan query dibawah ini
-                        if(mysqli_num_rows($query_e) == 0  && in_array($ekstensi, $ekstensi_diperbolehkan) === true){
+                        if(checkEmail()  && in_array($ekstensi, $ekstensi_diperbolehkan) === true){
                             move_uploaded_file($file_tmp, '../img/assets/'.$nama);
                             $query = mysqli_query($con,
                             "UPDATE user SET nama_user = '$nama_user' , nama_foto = '$nama', email = '$email' where email = '$sessionEmail'" ) or die(mysqli_error($con)); 
+                            // var_dump(mysqli_error($con));
                                 // var_dump($query);
 
 
@@ -56,7 +91,7 @@
                                     </script>';
                             }
                         }else{
-                            if(mysqli_num_rows($query_e) != 0){
+                            if(checkEmail()==false){
                                 echo '<script> alert("Email must be unique!"); window.history.back() </script>';
                             }
                             if(in_array($ekstensi, $ekstensi_diperbolehkan) !== true){
